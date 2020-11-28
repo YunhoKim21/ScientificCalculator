@@ -88,7 +88,6 @@ def solve(problem):
             a=solve(problem[index1+4:index2])
             b=solve(problem[index2+2:])
             funct=solve(problem[9:index1]).integrate()
-            print(funct)
             return funct.applyPol(b)-funct.applyPol(a)
 
         else:
@@ -105,7 +104,7 @@ def solve(problem):
             ret.coefArr[0]=1
             return ret
         return ret
-    print(problem)
+    
     if sf.doesStringExist(problem, "=="):
         index=sf.whereIsString(problem, "==")
         if solve(problem[:index])==solve(problem[index+2:]):
